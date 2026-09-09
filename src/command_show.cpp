@@ -154,7 +154,7 @@ namespace {
 
 int execute_pager(const std::string& pager, bool with_color) {
     int pipefd[2];
-    if (::pipe(pipefd) < 0) {
+    if (::pipe(pipefd) < 0) { // NOLINT(cppcoreguidelines-pro-bounds-array-to-pointer-decay,hicpp-no-array-decay)
         throw std::system_error{errno, std::system_category(), "Could not run pager: pipe() call failed"};
     }
 
