@@ -47,3 +47,8 @@ check_apply_changes(version-on-version-timestamp-low "--locations-on-ways" input
 
 # The input file has all metadata fields, the diff has only version fields.
 check_apply_changes(version-on-all "" input-data.osm input-change-only-version.osc "osm" output-version-applied-on-all.osm)
+
+#-----------------------------------------------------------------------------
+# Regression tests
+#-----------------------------------------------------------------------------
+check_apply_changes(same-id "" input-same-id.osm input-same-id.osc "osm" output-same-id.osm)
